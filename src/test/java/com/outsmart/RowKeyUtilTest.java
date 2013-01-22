@@ -51,4 +51,11 @@ public class RowKeyUtilTest {
 		assertEquals(Long.MAX_VALUE - timestamp, Bytes.toLong(returnedTimestamp));
 	}
 
+	@Test
+	public void testAddBytes() throws Exception {
+		byte[] res = Bytes.add(RowKeyUtil.getHash("s"), RowKeyUtil.getHash("s"), RowKeyUtil.getHash("s"));
+		res = Bytes.add(res, Bytes.toBytes(Long.MAX_VALUE - 3L));
+		assertEquals(res.length, RowKeyUtil.SIZEOF_STRING * 3 + Bytes.SIZEOF_LONG);
+	}
+
 }

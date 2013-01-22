@@ -131,4 +131,17 @@ public class SlidingInterpolatorImplTest {
 		assertEquals(res.get(1).value(), 60004, delta);
 	}
 
+	@Test
+	public void testInterpolateRealData() throws Exception {
+		interpolator.offer(new TimedValue(1358457557006L,1));
+		interpolator.offer(new TimedValue(1358458093054L,2));
+		interpolator.offer(new TimedValue(1358458393054L,4));
+		List<TimedValue> res = interpolator.offer(new TimedValue(1358458693054L,6));
+		for(TimedValue tv : res)
+			System.out.println(tv);
+		//assertEquals(res.size(), 1);
+		//assertEquals(res.get(0).timestamp(), 120000);
+		//assertEquals(res.get(0).value(), 3, delta);
+	}
+
 }

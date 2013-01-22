@@ -10,7 +10,7 @@ import java.util.Arrays;
  */
 public class RowKeyUtil {
 
-	static final private int SIZEOF_STRING = 16;
+	static final protected int SIZEOF_STRING = 16;
 
 	/**
 	 * create rowkey using customer, location, wireid and reversed timestamp
