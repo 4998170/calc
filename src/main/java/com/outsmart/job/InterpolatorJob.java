@@ -1,5 +1,7 @@
-package com.outsmart;
+package com.outsmart.job;
 
+import com.outsmart.RowKeyUtil;
+import com.outsmart.Settings;
 import com.outsmart.interpolation.Interpolator;
 import com.outsmart.interpolation.SlidingInterpolatorImpl;
 import com.outsmart.measurement.TimedValue;
@@ -77,20 +79,15 @@ public class InterpolatorJob {
 			List<TimedValue> tvalues = new ArrayList<TimedValue>();
 
 			for(TimedValueWritable tvw : timedValues) {
-				log.info("received value " + tvw.getTimedValue().timestamp());
+				//log.info("received value " + tvw.getTimedValue().timestamp());
 				tvalues.add(tvw.getTimedValue());
 			}
 			Collections.sort(tvalues);
 
 			//context.getCounter(InterpolatorValue.INCOMING_KEYS).increment(1);
 
-			//int i = 0;
-			log.info("iterating over timed values for " + wireKey.get());
 			for(TimedValue tvw : tvalues) {
-				//i++;
-				log.info("timed value " + tvw.timestamp());
 				//context.getCounter(InterpolatorValue.INCOMING_VALUES).increment(1);
-				//TODO: make sure they are sorted by time
 				List<TimedValue> interpolated = itp.offer (tvw);
 
 				for(TimedValue tv : interpolated) {
@@ -104,8 +101,6 @@ public class InterpolatorJob {
 					context.write(itpKey, put);
 				}
 			}
-
-			//log.info("iterated over " + i + " records");
 
 		}
 	}

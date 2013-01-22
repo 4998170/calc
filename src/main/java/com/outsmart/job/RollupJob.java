@@ -1,5 +1,7 @@
-package com.outsmart;
+package com.outsmart.job;
 
+import com.outsmart.RowKeyUtil;
+import com.outsmart.Settings;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.client.Put;
