@@ -115,7 +115,7 @@
 
                     <archive>
                         <manifest>
-                            <mainClass>com.outsmart.InterpolatorJob</mainClass>
+                            <mainClass>com.outsmart.Runner</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

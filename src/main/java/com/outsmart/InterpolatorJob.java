@@ -7,7 +7,6 @@ import com.outsmart.measurement.TimedValueWritable;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Result;
@@ -18,8 +17,6 @@ import org.apache.hadoop.hbase.mapreduce.TableMapper;
 import org.apache.hadoop.hbase.mapreduce.TableReducer;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.hadoop.mapreduce.Job;
-import org.apache.hadoop.util.Tool;
-import org.apache.hadoop.util.ToolRunner;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,7 +26,7 @@ import java.util.List;
 /**
  * @author Vadim Bobrov
  */
-public class InterpolatorJob extends Configured implements Tool {
+public class InterpolatorJob {
 
 	public static class MyMapper extends TableMapper<
 			ImmutableBytesWritable,		// customer, location, wireid
@@ -114,7 +111,7 @@ public class InterpolatorJob extends Configured implements Tool {
 	}
 
 
-	public int run(String[] args) throws Exception {
+	public static Job getJob()  throws Exception {
 		Configuration conf = HBaseConfiguration.create();
 		Job job = new Job(conf, "InterpolatorJob");
 		job.setJarByClass(InterpolatorJob.class);
@@ -138,12 +135,8 @@ public class InterpolatorJob extends Configured implements Tool {
 				job);
 
 		job.setNumReduceTasks(1);   					// at least one, adjust as required
-		System.exit(job.waitForCompletion(true) ? 0 : 1);
-		return 0;
+		return job;
 	}
 
-	public static void main(String[] args) throws Exception {
-		int res = ToolRunner.run(new Configuration(), new InterpolatorJob(), args);
-		System.exit(res);
-	}
+
 }
