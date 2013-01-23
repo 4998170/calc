@@ -11,7 +11,7 @@
     </appender>
 
     <!-- Application Loggers -->
-    <logger name="com.outsmart">
+    <logger name="com.os">
         <level value="debug" />
     </logger>
 

@@ -1,11 +1,11 @@
-package com.outsmart.job;
+package com.os.job;
 
-import com.outsmart.RowKeyUtil;
-import com.outsmart.Settings;
-import com.outsmart.interpolation.Interpolator;
-import com.outsmart.interpolation.SlidingInterpolatorImpl;
-import com.outsmart.measurement.TimedValue;
-import com.outsmart.measurement.TimedValueWritable;
+import com.os.RowKeyUtil;
+import com.os.Settings;
+import com.os.interpolation.Interpolator;
+import com.os.interpolation.SlidingInterpolatorImpl;
+import com.os.measurement.TimedValue;
+import com.os.measurement.TimedValueWritable;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.conf.Configuration;

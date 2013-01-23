@@ -1,7 +1,7 @@
-package com.outsmart.interpolation;
+package com.os.interpolation;
 
 
-import com.outsmart.measurement.TimedValue;
+import com.os.measurement.TimedValue;
 
 /**
  * @author Vadim Bobrov

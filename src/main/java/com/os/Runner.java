@@ -1,7 +1,7 @@
-package com.outsmart;
+package com.os;
 
-import com.outsmart.job.InterpolatorJob;
-import com.outsmart.job.RollupJob;
+import com.os.job.InterpolatorJob;
+import com.os.job.RollupJob;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.util.Tool;

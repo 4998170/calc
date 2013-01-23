@@ -1,4 +1,4 @@
-package com.outsmart;
+package com.os;
 
 /**
  * @author Vadim Bobrov

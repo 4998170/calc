@@ -115,7 +115,7 @@
 
                     <archive>
                         <manifest>
-                            <mainClass>com.outsmart.Runner</mainClass>
+                            <mainClass>com.os.Runner</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

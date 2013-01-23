@@ -1,4 +1,4 @@
-package com.outsmart.measurement;
+package com.os.measurement;
 
 import org.junit.Test;
 

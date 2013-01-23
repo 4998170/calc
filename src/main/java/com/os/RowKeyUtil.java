@@ -1,4 +1,4 @@
-package com.outsmart;
+package com.os;
 
 import org.apache.hadoop.hbase.util.Bytes;
 
